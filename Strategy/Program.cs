@@ -59,6 +59,7 @@ namespace Strategy
             }
         }
 
+        //Bir işlem için birden fazla farklı yöntemlerin uygulanabileceği durumlar mevcuttur. İşte bu tarz durumlarda hangi yöntemin uygulanacağını, hangisinin devreye sokulacağını Strategy Design Pattern ile gerçekleştirebiliyoruz.
         static void Main(string[] args)
         {
             Serializer serializer = new Serializer(new JsonSerializer());

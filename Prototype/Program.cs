@@ -56,6 +56,9 @@ namespace Prototype
         }
     }
 
+    //Shallow Copy ve Deep Copy olmak üzere iki tür nesne kopyalama işlemi mevcuttur. Shallow Copy ile nesnelerin bellekteki adresleri kopyalanmakta dolayısıyla yüzeysel olarak bir kopyalama işlemi gerçekleştirileceği için yeni bir nesne üretilmemekte, var olan nesne üzerine referanslar ile işaretleme yapılmaktadır. Anlayacağınız Shallow Copy, Prototype Design Pattern için uygun tercih olmayacaktır.
+
+    //Deep Copy ile nesneler birebir kopyalanabilmekte ve bu kopya sonucu ile asıl nesne farklı referanslar ile işaretlenebilmektedir. İşte Prototype Design Pattern’de bu kopyalama yaklaşımında bulunmak en doğrusudur.
     class Program
     {
         static void Main(string[] args)
@@ -69,7 +72,7 @@ namespace Prototype
             adventure.Entities.Add(person);
 
             adventure.Entities.Add(product.Clone() as Product);
-            adventure.Entities.Add(product.Clone() as Person);
+            adventure.Entities.Add(person.Clone() as Person);
         }
     }
 }
